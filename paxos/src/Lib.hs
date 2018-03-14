@@ -8,10 +8,7 @@ import Agents
 import System.Environment               (getArgs)
 import Network.Transport.TCP (createTransport, defaultTCPParameters)
 import Control.Distributed.Process.Node  (runProcess, initRemoteTable, newLocalNode)
-import Control.Distributed.Process.Closure 
-
-
-
+import Control.Distributed.Process.Closure
 
 
 
@@ -22,4 +19,4 @@ someFunc = do
         p = read p'
     Right transport  <- createTransport "127.0.0.1" "10501" defaultTCPParameters
     node <- newLocalNode transport initRemoteTable
-    runProcess node $ master a p 
+    runProcess node $ master a p
